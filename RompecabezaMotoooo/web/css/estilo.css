@@ -1,0 +1,230 @@
+
+body {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #ecf0f1;
+    background-image: url('../img/fondoimagen.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: #1a1a1a;
+}
+.main-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    max-width: 1000px;
+    width: 100%;
+    flex-wrap: wrap;
+}
+.container {
+    background: rgba(30, 30, 30, 0.5);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+    padding: 25px;
+    max-width: 480px;
+    width: 100%;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+h2 {
+    color: #f1c40f;
+    margin-bottom: 15px;
+    font-size: 24px;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+    position: relative;
+    display: inline-block;
+    padding-bottom: 8px;
+}
+h2:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50%;
+    height: 2px;
+    background: linear-gradient(to right, #f1c40f, transparent);
+}
+
+.puzzle {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 6px;
+    margin: 15px auto;
+    width: 360px;
+    height: 360px;
+    border-radius: 12px;
+    padding: 6px;
+    background: transparent;
+    box-shadow: inset 0 2px 10px rgba(255, 255, 255, 0.05),
+                0 0 20px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.celda {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 3px 6px rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    background-color: transparent;
+}
+.celda:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    opacity: 0;
+    transition: all 0.2s ease;
+    z-index: 2;
+    border-radius: 10px;
+}
+.celda:hover {
+    transform: scale(1.06);
+    box-shadow: 0 5px 15px rgba(241, 196, 15, 0.4);
+    z-index: 10;
+}
+.celda:hover:before {
+    opacity: 1;
+    background: rgba(255, 255, 255, 0.1);
+}
+.vacio {
+    background: rgba(0, 0, 0, 0.5);
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+    cursor: default;
+    border-radius: 10px;
+}
+
+button {
+    background: linear-gradient(135deg, #f39c12, #d35400);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.15);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+button:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: 0.5s;
+}
+button:hover {
+    background: linear-gradient(135deg, #e67e22, #ba4a00);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(255, 255, 255, 0.2);
+}
+button:hover:after {
+    left: 100%;
+}
+
+#mensaje {
+    font-weight: bold;
+    color: #2ecc71;
+    font-size: 18px;
+    margin: 15px 0;
+    min-height: 24px;
+    text-shadow: 0 0 5px rgba(46, 204, 113, 0.5);
+    padding: 8px;
+    border-radius: 6px;
+    background: rgba(46, 204, 113, 0.15);
+}
+
+.ImagenReferencia {
+    background: transparent;
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+    padding: 25px;
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+.ImagenReferencia h2 {
+    color: #e74c3c;
+    font-size: 22px;
+    margin-bottom: 12px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+    position: relative;
+    display: inline-block;
+    padding-bottom: 6px;
+}
+.ImagenReferencia h2:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50%;
+    height: 2px;
+    background: linear-gradient(to right, #e74c3c, transparent);
+}
+.ImagenReferencia p {
+    color: #95a5a6;
+    margin-bottom: 15px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+.ImagenReferencia img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    width: 320px;
+    height: 320px;
+    object-fit: cover;
+}
+.ImagenReferencia img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.25);
+}
+@media (max-width: 768px) {
+    .main-content {
+        flex-direction: column;
+        align-items: center;
+    }
+    .puzzle, .ImagenReferencia img {
+        width: 280px;
+        height: 280px;
+    }
+    .container, .ImagenReferencia {
+        padding: 20px 15px;
+        margin-bottom: 20px;
+    }
+}
